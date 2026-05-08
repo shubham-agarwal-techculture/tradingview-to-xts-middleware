@@ -2,50 +2,27 @@
     "open": {},
     "closed": [
         {
-            "symbol": "TINM",
-            "side": "buy",
-            "price": "1000",
-            "open_time": "2026-05-07 17:29:53.722493",
-            "close_time": "2026-05-07 17:30:12.208710",
-            "close_price": "Market"
-        },
-        {
-            "symbol": "TINM",
-            "side": "buy",
-            "price": "1000",
-            "open_time": "2026-05-07 17:23:08.163052",
-            "close_time": "2026-05-07 17:23:35.814936",
-            "close_price": "Market"
-        },
-        {
-            "symbol": "COPPERM",
-            "side": "buy",
-            "price": "10000",
-            "open_time": "2026-05-07 17:18:22.870240",
-            "close_time": "2026-05-07 17:21:17.082363",
-            "close_price": "Market"
-        },
-        {
-            "symbol": "SILVERM",
-            "side": "SELL",
-            "price": "250000",
-            "open_time": "2026-05-07 17:14:22.748522",
-            "close_time": "2026-05-07 17:14:49.321120",
-            "close_price": "Market"
-        },
-        {
             "symbol": "GOLDM",
-            "side": "BUY",
-            "price": "153000",
-            "close_time": "2026-05-07 17:13:22.086898",
+            "side": "SELL",
+            "price": "151000",
+            "open_time": "2026-05-08 11:41:25.527052",
+            "close_time": "2026-05-08 11:41:44.949687",
             "close_price": "Market"
         },
         {
-            "symbol": "NIFTY",
-            "side": "BUY",
-            "price": "22000",
-            "open_time": "2026-05-07 17:09:32.598573",
-            "close_time": "2026-05-07 17:10:15.373701",
+            "symbol": "SENSEX",
+            "side": "SELL",
+            "price": "24300",
+            "open_time": "2026-05-08 11:38:13.627849",
+            "close_time": "2026-05-08 11:38:28.479068",
+            "close_price": "Market"
+        },
+        {
+            "symbol": "NIFTY50",
+            "side": "SELL",
+            "price": "24300",
+            "open_time": "2026-05-08 11:26:59.676568",
+            "close_time": "2026-05-08 11:27:24.230376",
             "close_price": "Market"
         }
     ]

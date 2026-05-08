@@ -1,87 +1,39 @@
 {
     "alerts": [
         {
-            "time": "2026-05-07 17:29:51.680031",
-            "symbol": "TINM",
-            "action": "buy",
-            "price": "1000"
-        },
-        {
-            "time": "2026-05-07 17:23:06.116857",
-            "symbol": "TINM",
-            "action": "buy",
-            "price": "1000"
-        },
-        {
-            "time": "2026-05-07 17:18:20.835158",
-            "symbol": "COPPERM",
-            "action": "buy",
-            "price": "10000"
-        },
-        {
-            "time": "2026-05-07 17:14:20.707330",
-            "symbol": "SILVERM",
-            "action": "SELL",
-            "price": "250000"
-        },
-        {
-            "time": "2026-05-07 17:09:30.545793",
-            "symbol": "NIFTY",
-            "action": "BUY",
-            "price": "22000"
-        },
-        {
-            "time": "2026-05-07 17:05:54.134433",
+            "time": "2026-05-08 11:41:23.502512",
             "symbol": "GOLDM",
-            "action": "BUY",
-            "price": "153000"
+            "action": "SELL",
+            "price": "151000"
         },
         {
-            "time": "2026-05-07 17:00:05.753924",
+            "time": "2026-05-08 11:38:11.618560",
+            "symbol": "SENSEX",
+            "action": "SELL",
+            "price": "24300"
+        },
+        {
+            "time": "2026-05-08 11:26:57.645073",
             "symbol": "NIFTY50",
             "action": "SELL",
-            "price": "23950"
+            "price": "24300"
         }
     ],
     "orders": [
         {
-            "time": "2026-05-07 17:29:53.724506",
-            "symbol": "TINM",
-            "action": "buy",
-            "status": "Order placed successfully"
-        },
-        {
-            "time": "2026-05-07 17:23:08.168080",
-            "symbol": "TINM",
-            "action": "buy",
-            "status": "Order placed successfully"
-        },
-        {
-            "time": "2026-05-07 17:18:22.872250",
-            "symbol": "COPPERM",
-            "action": "buy",
-            "status": "Order placed successfully"
-        },
-        {
-            "time": "2026-05-07 17:14:22.750016",
-            "symbol": "SILVERM",
+            "time": "2026-05-08 11:41:25.529084",
+            "symbol": "GOLDM",
             "action": "SELL",
             "status": "Order placed successfully"
         },
         {
-            "time": "2026-05-07 17:09:32.600574",
-            "symbol": "NIFTY",
-            "action": "BUY",
+            "time": "2026-05-08 11:38:13.629655",
+            "symbol": "SENSEX",
+            "action": "SELL",
             "status": "Order placed successfully"
         },
         {
-            "time": "2026-05-07 17:05:56.176799",
-            "symbol": "GOLDM",
-            "action": "BUY",
-            "status": "Order placed successfully"
-        },
-        {
-            "time": "2026-05-07 17:00:07.806274",
+            "time": "2026-05-08 11:26:59.677571",
             "symbol": "NIFTY50",
             "action": "SELL",
             "status": "Order placed successfully"

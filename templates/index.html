@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TradingView Webhook Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-color: #0f172a;
@@ -138,8 +140,15 @@
             font-size: 0.8rem;
         }
 
-        .side-buy { color: var(--success); font-weight: 600; }
-        .side-sell { color: var(--danger); font-weight: 600; }
+        .side-buy {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .side-sell {
+            color: var(--danger);
+            font-weight: 600;
+        }
 
         .btn-squareoff {
             background-color: rgba(239, 68, 68, 0.1);
@@ -174,18 +183,22 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--bg-color);
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--border);
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--text-secondary);
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -278,6 +291,11 @@
     </div>
 
     <script>
+        // Smart URL detection: If opened via Live Server (5500), point to Flask (5000)
+        const API_BASE = window.location.port === '5000' || window.location.port === ''
+            ? ''
+            : 'http://127.0.0.1:5000';
+
         async function squareOff(symbol) {
             const btn = event.target;
             const originalText = btn.textContent;
@@ -285,12 +303,12 @@
             btn.textContent = '...';
 
             try {
-                const response = await fetch('/square_off', {
+                const response = await fetch(`${API_BASE}/square_off`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ symbol: symbol })
                 });
-                
+
                 const result = await response.json();
                 if (!response.ok) {
                     alert('Square off failed: ' + (result.message || 'Unknown error'));
@@ -312,24 +330,25 @@
                     return timeStr.split(' ')[1].split('.')[0];
                 }
                 return timeStr;
-            } catch(e) {
+            } catch (e) {
                 return timeStr;
             }
         }
 
         async function loadLogs() {
             try {
-                const response = await fetch('/logs');
+                const response = await fetch(`${API_BASE}/logs`);
                 const data = await response.json();
 
                 // Open Positions
                 let openHtml = '';
                 if (data.open_positions && data.open_positions.length > 0) {
                     data.open_positions.forEach(pos => {
+                        const side = (pos.side || '').toUpperCase();
                         openHtml += `
                             <tr>
                                 <td class="mono" style="font-weight:600">${pos.symbol}</td>
-                                <td class="${pos.side === 'BUY' ? 'side-buy' : 'side-sell'}">${pos.side}</td>
+                                <td class="${side === 'BUY' ? 'side-buy' : 'side-sell'}">${side}</td>
                                 <td class="mono">${pos.price}</td>
                                 <td class="mono" style="font-size: 0.75rem">${formatTime(pos.open_time)}</td>
                                 <td>
@@ -347,10 +366,11 @@
                 let closedHtml = '';
                 if (data.closed_positions && data.closed_positions.length > 0) {
                     data.closed_positions.forEach(pos => {
+                        const side = (pos.side || '').toUpperCase();
                         closedHtml += `
                             <tr>
                                 <td class="mono" style="font-weight:600">${pos.symbol}</td>
-                                <td class="${pos.side === 'BUY' ? 'side-buy' : 'side-sell'}">${pos.side}</td>
+                                <td class="${side === 'BUY' ? 'side-buy' : 'side-sell'}">${side}</td>
                                 <td class="mono">
                                     ${pos.price} <span style="color: var(--text-secondary); font-size: 0.7rem">@ ${formatTime(pos.open_time)}</span>
                                 </td>
@@ -367,13 +387,14 @@
 
                 // Alerts
                 let alertsHtml = '';
-                if (data.alerts.length > 0) {
+                if (data.alerts && data.alerts.length > 0) {
                     data.alerts.forEach(alert => {
+                        const action = (alert.action || '').toUpperCase();
                         alertsHtml += `
                             <tr>
                                 <td class="mono" style="font-size: 0.75rem; color: var(--text-secondary)">${formatTime(alert.time)}</td>
                                 <td class="mono">${alert.symbol}</td>
-                                <td class="${alert.action === 'BUY' ? 'side-buy' : 'side-sell'}">${alert.action}</td>
+                                <td class="${action === 'BUY' ? 'side-buy' : 'side-sell'}">${action}</td>
                                 <td class="mono">${alert.price}</td>
                             </tr>
                         `;
@@ -410,4 +431,5 @@
         loadLogs();
     </script>
 </body>
+
 </html>
