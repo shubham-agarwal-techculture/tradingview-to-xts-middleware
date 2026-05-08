@@ -1,41 +1,41 @@
 {
     "alerts": [
         {
-            "time": "2026-05-08 11:41:23.502512",
+            "time": "2026-05-08 12:22:22.462105",
             "symbol": "GOLDM",
-            "action": "SELL",
-            "price": "151000"
+            "action": "BUY",
+            "price": "152000"
         },
         {
-            "time": "2026-05-08 11:38:11.618560",
-            "symbol": "SENSEX",
+            "time": "2026-05-08 12:11:47.858541",
+            "symbol": "wipro",
             "action": "SELL",
-            "price": "24300"
+            "price": "300"
         },
         {
-            "time": "2026-05-08 11:26:57.645073",
-            "symbol": "NIFTY50",
-            "action": "SELL",
-            "price": "24300"
+            "time": "2026-05-08 12:11:07.448650",
+            "symbol": "TCS",
+            "action": "BUY",
+            "price": "1867"
         }
     ],
     "orders": [
         {
-            "time": "2026-05-08 11:41:25.529084",
+            "time": "2026-05-08 12:22:24.492976",
             "symbol": "GOLDM",
+            "action": "BUY",
+            "status": "Order placed successfully"
+        },
+        {
+            "time": "2026-05-08 12:11:49.876375",
+            "symbol": "wipro",
             "action": "SELL",
             "status": "Order placed successfully"
         },
         {
-            "time": "2026-05-08 11:38:13.629655",
-            "symbol": "SENSEX",
-            "action": "SELL",
-            "status": "Order placed successfully"
-        },
-        {
-            "time": "2026-05-08 11:26:59.677571",
-            "symbol": "NIFTY50",
-            "action": "SELL",
+            "time": "2026-05-08 12:11:09.457246",
+            "symbol": "TCS",
+            "action": "BUY",
             "status": "Order placed successfully"
         }
     ]

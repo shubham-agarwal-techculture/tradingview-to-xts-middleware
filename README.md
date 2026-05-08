@@ -16,6 +16,43 @@ A robust, real-time middleware designed to bridge TradingView alerts with the XT
     - **Manual Square-Off**: One-click position closing directly from the UI.
 - **Persistent Memory**: All history (alerts, orders, positions) is saved to local JSON databases (`db_app.json`, `db_broker.json`), surviving server restarts.
 - **Simulated Environment**: Includes a `dummy_xts_api.py` for risk-free testing and development.
+---
+
+## 🔄 System Flow
+
+```mermaid
+flowchart TD
+    subgraph TradingView ["🌐 External Cloud"]
+        A[TradingView Strategy] -- "Webhook (JSON)" --> B(Ngrok Public URL)
+    end
+
+    subgraph LocalSystem ["💻 Local Machine"]
+        B -- "Forwarding (Port 5000)" --> C{Flask Middleware}
+        
+        subgraph InternalProcess ["App Logic (app.py)"]
+            C -- "1. Log Alert" --> D[(db_app.json)]
+            C -- "2. Execute Order" --> E[Dummy Broker API]
+            C -- "3. Update UI" --> F[Premium Dashboard]
+        end
+
+        subgraph BrokerSim ["Broker Simulation (dummy_xts_api.py)"]
+            E -- "Update Positions" --> G[(db_broker.json)]
+            G -- "Portfolio Data" --> E
+        end
+        
+        F -- "AJAX Poll" --> C
+        F -- "Manual Square-Off" --> C
+        C -- "Close Position" --> E
+    end
+
+    %% Styling
+    style A fill:#2962FF,color:#fff,stroke:#0039cb
+    style F fill:#00C853,color:#fff,stroke:#009624
+    style E fill:#FF6D00,color:#fff,stroke:#c43e00
+    style D fill:#424242,color:#fff,stroke:#1b1b1b
+    style G fill:#424242,color:#fff,stroke:#1b1b1b
+    style C fill:#6200EA,color:#fff,stroke:#311b92
+```
 
 ---
 

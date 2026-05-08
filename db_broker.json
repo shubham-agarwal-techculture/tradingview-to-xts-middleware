@@ -1,28 +1,27 @@
 {
-    "open": {},
+    "open": {
+        "GOLDM": {
+            "symbol": "GOLDM",
+            "side": "BUY",
+            "price": "152000",
+            "open_time": "2026-05-08 12:22:24.491644"
+        }
+    },
     "closed": [
         {
-            "symbol": "GOLDM",
+            "symbol": "wipro",
             "side": "SELL",
-            "price": "151000",
-            "open_time": "2026-05-08 11:41:25.527052",
-            "close_time": "2026-05-08 11:41:44.949687",
+            "price": "300",
+            "open_time": "2026-05-08 12:11:49.874882",
+            "close_time": "2026-05-08 12:12:02.490319",
             "close_price": "Market"
         },
         {
-            "symbol": "SENSEX",
-            "side": "SELL",
-            "price": "24300",
-            "open_time": "2026-05-08 11:38:13.627849",
-            "close_time": "2026-05-08 11:38:28.479068",
-            "close_price": "Market"
-        },
-        {
-            "symbol": "NIFTY50",
-            "side": "SELL",
-            "price": "24300",
-            "open_time": "2026-05-08 11:26:59.676568",
-            "close_time": "2026-05-08 11:27:24.230376",
+            "symbol": "TCS",
+            "side": "BUY",
+            "price": "1867",
+            "open_time": "2026-05-08 12:11:09.455849",
+            "close_time": "2026-05-08 12:11:25.350813",
             "close_price": "Market"
         }
     ]
