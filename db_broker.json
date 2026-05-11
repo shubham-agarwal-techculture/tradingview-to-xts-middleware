@@ -1,13 +1,14 @@
 {
-    "open": {
-        "GOLDM": {
+    "open": {},
+    "closed": [
+        {
             "symbol": "GOLDM",
             "side": "BUY",
             "price": "152000",
-            "open_time": "2026-05-08 12:22:24.491644"
-        }
-    },
-    "closed": [
+            "open_time": "2026-05-08 12:22:24.491644",
+            "close_time": "2026-05-11 10:39:27.131443",
+            "close_price": "Market"
+        },
         {
             "symbol": "wipro",
             "side": "SELL",

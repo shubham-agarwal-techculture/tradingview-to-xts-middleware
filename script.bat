@@ -26,10 +26,22 @@ exit /b
 :ACTIVATE_OK
 call ".venv\Scripts\activate.bat"
 
+:: Automatically get current script folder
+set "PROJECT=%~dp0"
+
+:: Remove trailing backslash
+if "%PROJECT:~-1%"=="\" set "PROJECT=%PROJECT:~0,-1%"
+
+echo Using project path:
+echo %PROJECT%
+echo.
+
 :: Open Server 1 in a new CMD window
 @REM start /b cmd /c "python app.py"
 
-wt nt --title "Middleware-app" cmd /k "cd /d D:\projects-shubham\08.05.2026\trading_view_alerts && python app.py";nt --title "ngrok server public webhook" cmd /k "cd /d D:\projects-shubham\08.05.2026\trading_view_alerts && ngrok http 5000";nt --title "dummy xts api" cmd /k "cd /d D:\projects-shubham\08.05.2026\trading_view_alerts && python dummy_xts_api.py"
+wt nt --title "Middleware-app" cmd /k "cd /d D:\projects-shubham\11.05.2026\trading_view_alerts && python app.py";nt --title "ngrok server public webhook" cmd /k "cd /d D:\projects-shubham\11.05.2026\trading_view_alerts && ngrok http 5000";nt --title "dummy xts api" cmd /k "cd /d D:\projects-shubham\11.05.2026\trading_view_alerts && python dummy_xts_api.py"
+
+@REM wt nt --title "Middleware-app" cmd /k "cd /d ""%PROJECT%"" && python app.py";nt --title "ngrok server public webhook" cmd /k "cd /d ""%PROJECT%"" && ngrok http 5000";nt --title "dummy xts api" cmd /k "cd /d ""%PROJECT%"" && python dummy_xts_api.py"
 
 
 :: Open Server 2 in a new CMD window

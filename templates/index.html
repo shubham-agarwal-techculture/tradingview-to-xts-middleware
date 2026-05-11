@@ -325,11 +325,8 @@
         function formatTime(timeStr) {
             if (!timeStr) return '-';
             try {
-                // If it's a full ISO or datetime string
-                if (timeStr.includes(' ')) {
-                    return timeStr.split(' ')[1].split('.')[0];
-                }
-                return timeStr;
+                // Return full date and time (remove milliseconds if present)
+                return timeStr.split('.')[0];
             } catch (e) {
                 return timeStr;
             }
